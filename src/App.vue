@@ -1,7 +1,7 @@
 <template>
   <div class="w-full min-h-screen flex flex-col items-center">
     <Bar />
-    <Block class="h-4/6 w-full flex-auto bg-stone-100"/>
+    <Block class="h-4/6 w-full flex-auto"/>
   </div>
 </template>
 

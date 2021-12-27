@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'Block',
+  name: 'MainBlock',
   data () {
     return {
       state: 'start',
@@ -43,7 +43,7 @@ export default {
         this.time = 0
 
         // Begins timeout timer
-        setTimeout(()=>{
+        setTimeout(() => {
           if (!this.clicked) {
             this.state = 'go'
             this.startTimer()
@@ -51,19 +51,16 @@ export default {
             this.clicked = false
           }
         }, 1000 + Math.random() * 2000)
-
       } else if (this.state === 'wait') {
         this.clicked = true
         this.state = 'start'
         this.$emit('failed')
-
       } else {
         this.stopTimer()
 
         this.state = 'start'
         this.$emit('succeded', this.time)
         console.log(this.time)
-
       }
     },
 
@@ -72,8 +69,8 @@ export default {
       this.timer = setInterval(() => { this.time += 10 }, 10)
     },
 
-    stopTimer() {
-      //Stops timer object
+    stopTimer () {
+      // Stops timer object
       clearInterval(this.timer)
     }
   }
