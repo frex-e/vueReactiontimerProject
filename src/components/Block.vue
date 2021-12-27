@@ -33,9 +33,10 @@ export default {
       clicked: false
     }
   },
+  emits: ['fail', 'success'],
+
   methods: {
     onClick () {
-      console.log('Ahh')
       if (this.state === 'start') {
         this.state = 'wait'
 
@@ -54,12 +55,12 @@ export default {
       } else if (this.state === 'wait') {
         this.clicked = true
         this.state = 'start'
-        this.$emit('failed')
+        this.$emit('fail')
       } else {
         this.stopTimer()
 
         this.state = 'start'
-        this.$emit('succeded', this.time)
+        this.$emit('success', this.time)
         console.log(this.time)
       }
     },

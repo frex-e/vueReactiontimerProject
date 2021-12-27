@@ -1,17 +1,35 @@
 <template>
-  <div class="w-full min-h-screen flex flex-col items-center">
-    <Bar />
-    <Block class="h-4/6 w-full flex-auto"/>
+  <div class="flex flex-col items-center w-full min-h-screen max-h-screen">
+    <TopBar />
+    <MainBlock class="flex-auto w-full" @success="onSuccess" @fail="onFail"/>
+    <ResultBlock
+      class="flex-none w-full h-20 text-stone-700">{{ resultText }}</ResultBlock>
   </div>
 </template>
 
 <script>
-import Bar from './components/Bar'
-import Block from './components/Block'
+import TopBar from './components/Bar'
+import MainBlock from './components/Block'
+import ResultBlock from './components/ResultBlock'
 
 export default {
   name: 'App',
-  components: { Bar, Block }
+  components: { TopBar, MainBlock, ResultBlock },
+  data () {
+    return {
+      resultText: ''
+    }
+  },
+  methods: {
+    // Displays time in results bar
+    onSuccess (time) {
+      this.resultText = time + ' ms'
+    },
+    // Displays fail
+    onFail () {
+      this.resultText = 'Failed'
+    }
+  }
 }
 </script>
 
