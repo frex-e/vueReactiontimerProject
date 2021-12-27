@@ -1,15 +1,17 @@
 <template>
   <div class="w-full min-h-screen flex flex-col items-center">
     <Bar />
+    <Block class="h-4/6 w-full flex-auto"/>
   </div>
 </template>
 
 <script>
 import Bar from './components/Bar'
+import Block from './components/Block'
 
 export default {
   name: 'App',
-  components: { Bar }
+  components: { Bar, Block }
 }
 </script>
 
@@ -20,6 +22,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  @apply text-white;
+  @apply text-white text-lg;
 }
 </style>
