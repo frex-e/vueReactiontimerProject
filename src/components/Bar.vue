@@ -4,11 +4,8 @@
     <div class="text-left flex-auto">
       <span class="pl-2 font-semibold text-3xl">Reaction Timer</span>
     </div>
-    <div class="flex-none">
       <img src="https://github.githubassets.com/favicons/favicon-dark.svg"
-           class="h-10 w-10 mr-2"/>
-
-    </div>
+           class="h-10 w-10 mr-2 hover:text-green-300"/>
   </div>
 </template>
 
