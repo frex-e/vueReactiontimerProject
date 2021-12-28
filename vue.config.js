@@ -1,3 +1,5 @@
 module.exports = {
-  publicPath: '/vueReactiontimerProject/'
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/vueReactiontimerProject/'
+    : '/'
 }
